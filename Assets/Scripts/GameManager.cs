@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
        switch(currentState)
         {
-            case GameState.Emphatize:
+            case GameState.Empathize:
                 currentStateText.text = $"Current Game State: {currentState}";
                 currentCardDeckText.text = $"Current Card Deck: {currentDeck}";
                 break;
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
     {
         switch(currentState)
         {
-            case GameState.Emphatize:
+            case GameState.Empathize:
                 currentDeck = (CardDeck)0;
                 break;
             case GameState.Ideate:
