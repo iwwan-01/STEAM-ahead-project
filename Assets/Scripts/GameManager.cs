@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private enum GameState
     {
-        Emphatize,
+        Empathize,
         Ideate,
         Prototype,
         Evaluate,
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private enum CardDeck
     {
-        EmphatizeDeck,
+        EmpathizeDeck,
         IdeateDeck,
         PrototypeDeck,
         EvaluateDeck
