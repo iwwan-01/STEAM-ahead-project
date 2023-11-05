@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-    private enum GameState
+    public enum GameState
     {
         Empathize,
         Ideate,
@@ -16,7 +15,7 @@ public class GameManager : MonoBehaviour
         Evaluate,
     }
 
-    private enum CardDeck
+    public enum CardDeck
     {
         EmpathizeDeck,
         IdeateDeck,
