@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 
-public class CardCreator : MonoBehaviour
+public class QuestionCardCreator : MonoBehaviour
 {
     private Dropdown cardCategoryDropdown;
     private InputField cardTitleInput;
@@ -64,7 +64,7 @@ public class CardCreator : MonoBehaviour
         submitCardButton.onClick.AddListener(() => HandleOnSubmit());
     }
 
-    void DisplayCard(Card card)
+    void DisplayCard(QuestionCard card)
     {
         cardCategoryText.text = $"Current Card Category: {card.CardCategory}";
         cardTitleText.text = $"Current Card Title: {card.CardTitle}";
@@ -76,12 +76,13 @@ public class CardCreator : MonoBehaviour
 
         if (cardTitleInput.text.Length > 0 && cardQuestionInput.text.Length > 0)
         {
-            var card = new Card
+            var card = new QuestionCard
             {
                 CardCategory = cardCategoryDropdown.options[cardCategoryDropdown.value].text,
                 CardTitle = cardTitleInput.text,
                 CardQuestion = cardQuestionInput.text
             };
+
 
             DisplayCard(card);
 

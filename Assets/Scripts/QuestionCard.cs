@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Card
+public class QuestionCard
 {
     public string CardCategory { get; set; }
     public string CardTitle { get; set; }
