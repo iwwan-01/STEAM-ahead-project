@@ -22,7 +22,7 @@ public class AddPlayers : MonoBehaviour
     private GameObject playerTextPrefab;
     private Transform canvasTransform;
 
-    private Vector2 playerTextSpawnPoint = new Vector2(210f, 100f);
+    private Vector2 playerTextSpawnPoint = new Vector2(220f, 100f);
 
     void Awake()
     {

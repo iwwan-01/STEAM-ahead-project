@@ -76,18 +76,21 @@ public class QuestionCardCreator : MonoBehaviour
 
         if (cardTitleInput.text.Length > 0 && cardQuestionInput.text.Length > 0)
         {
-            var card = new QuestionCard
+            if (Enum.TryParse(cardCategoryDropdown.options[cardCategoryDropdown.value].text, out GameManager.PlayerRole parsedRole))
             {
-                CardCategory = cardCategoryDropdown.options[cardCategoryDropdown.value].text,
-                CardTitle = cardTitleInput.text,
-                CardQuestion = cardQuestionInput.text
-            };
+                var card = new QuestionCard
+                {
+                    CardCategory = parsedRole,
+                    CardTitle = cardTitleInput.text,
+                    CardQuestion = cardQuestionInput.text
+                };
 
 
-            DisplayCard(card);
+                DisplayCard(card);
 
-            var cardJSON = JsonConvert.SerializeObject(card);
-            Debug.Log(cardJSON);
+                var cardJSON = JsonConvert.SerializeObject(card);
+                Debug.Log(cardJSON);
+            }
         }
         else
         {

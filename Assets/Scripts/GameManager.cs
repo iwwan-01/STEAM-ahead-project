@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
         EvaluateDeck
     }
 
+    public enum PlayerRole
+    {
+        Artist,
+        Mathematician,
+        Technician,
+    }
+
     private GameState currentState;
     private CardDeck currentDeck;
     
