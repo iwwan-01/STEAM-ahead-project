@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88473616ecdddc8479884e6f4506e370, type: 3}
+  m_Name: Technician_Card_Main
+  m_EditorClassIdentifier: 
+  CardCategory: 2
+  CardTitle: Main Card
+  CardQuestion: "You are very precise. \nYou like to put things together. \nYou are
+    looking for explanations and solutions.\n\nTasks\n1) Read the cards and lead
+    the conversation.\n2) Research with the team how something works.\n3) Think with
+    the team why something works."
+  CardDescription: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88473616ecdddc8479884e6f4506e370, type: 3}
+  m_Name: Artist_Card_Main
+  m_EditorClassIdentifier: 
+  CardCategory: 0
+  CardTitle: Main Card
+  CardQuestion: 'You are curious
+
+    You want to know how something works
+
+    You
+    want to know why something is so.
+
+
+    Tasks
+
+    1) Read the cards and lead
+    the conversation
+
+    2) Come up with ideas together with the team
+
+    3) Help
+    your team be creative'
+  CardDescription: 

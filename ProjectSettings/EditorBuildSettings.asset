@@ -10,10 +10,13 @@ EditorBuildSettings:
     guid: 1e76dfa3d22b13b4b9142a71ff133c37
   - enabled: 1
     path: Assets/Scenes/TaskSelection.unity
-    guid: bcfe7acd559c8f04393b84d509376677
+    guid: 38cd9ffb14833af4ca40b0235c2bade7
   - enabled: 1
     path: Assets/Scenes/AddPlayers.unity
     guid: 004bcf53c7afef1488d953379097393a
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 691ba31950f5946499ae40b1d81a48a9
   - enabled: 0
     path: Assets/Scenes/TestingScene.unity
     guid: c850ee8c3b14cc8459e7e186857cf567

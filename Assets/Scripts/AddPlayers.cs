@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class AddPlayers : MonoBehaviour
 {
-    private InputField playerNameInput;
+    private TMP_InputField playerNameInput;
 
     private Button artistRoleButton;
     private Button designerRoleButton;
@@ -16,21 +17,21 @@ public class AddPlayers : MonoBehaviour
     private Button addPlayerButton;
     private string playerRole = "";
 
-    private List<PlayerCard> playerList = new List<PlayerCard>();
+    public List<PlayerCard> playerList = new List<PlayerCard>();
     //private List<GameObject> playerObject = new List<GameObject>();
 
     private GameObject playerTextPrefab;
     private Transform canvasTransform;
 
-    private Vector2 playerTextSpawnPoint = new Vector2(220f, 100f);
+    private Vector2 playerTextSpawnPoint = new Vector2(200f, 100f);
 
     void Awake()
     {
-        playerNameInput = GameObject.Find("InputField_PlayerName").GetComponent<InputField>();
+        playerNameInput = GameObject.Find("InputField_PlayerName").GetComponent<TMP_InputField>();
 
         artistRoleButton = GameObject.Find("Button_ArtistRole").GetComponent<Button>();
-        designerRoleButton = GameObject.Find("Button_DesignerRole").GetComponent<Button>();
-        developerRoleButton = GameObject.Find("Button_DeveloperRole").GetComponent<Button>();
+        designerRoleButton = GameObject.Find("Button_TechnicianRole").GetComponent<Button>();
+        developerRoleButton = GameObject.Find("Button_EngineerRole").GetComponent<Button>();
 
         addPlayerButton = GameObject.Find("Button_AddPlayer").GetComponent<Button>();
 
@@ -60,12 +61,12 @@ public class AddPlayers : MonoBehaviour
         {
             playerRole = "Artist";
         }
-        else if (clickedButtonName == "Button_DesignerRole")
+        else if (clickedButtonName == "Button_TechnicianRole")
         {
-            playerRole = "Designer";
-        } else if (clickedButtonName == "Button_DeveloperRole")
+            playerRole = "Technician";
+        } else if (clickedButtonName == "Button_EngineerRole")
         {
-            playerRole = "Developer";
+            playerRole = "Engineer";
         }
     }
 
@@ -84,16 +85,21 @@ public class AddPlayers : MonoBehaviour
 
         var existingPlayer = playerList.Find(player => player.PlayerName == playerCard.PlayerName);
 
+        //if(existingPlayer != null)
+        //{
+        //    existingPlayer.PlayerRole = playerCard.PlayerRole;
+        //}
+        
         if(existingPlayer != null)
         {
-            existingPlayer.PlayerRole = playerCard.PlayerRole;
-        }    
+            Debug.Log("This player already exists!");
+        }
         else
         {
             playerList.Add(playerCard);
+            DisplayPlayer(playerCard);
         }
 
-        DisplayPlayer(playerCard);
         PrintPlayerList();
     }
 
@@ -111,8 +117,8 @@ public class AddPlayers : MonoBehaviour
     {
         GameObject playerTextObject = Instantiate(playerTextPrefab, canvasTransform);
 
-        Text playerTextComponent = playerTextObject.GetComponent<Text>();
-        playerTextComponent.text = $"{playerCard.PlayerName} ({playerCard.PlayerRole})";
+        TMP_Text playerTextComponent = playerTextObject.GetComponent<TMP_Text>();
+        playerTextComponent.text = $"{playerCard.PlayerName} [{playerCard.PlayerRole}]";
 
         RectTransform rectTransformComponent = playerTextObject.GetComponent<RectTransform>();
         rectTransformComponent.anchoredPosition = playerTextSpawnPoint;
