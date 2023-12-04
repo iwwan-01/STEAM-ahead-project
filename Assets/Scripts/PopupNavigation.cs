@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextButton : MonoBehaviour
+public class PopupNavigation : MonoBehaviour
 {
     [SerializeField]
     private GameplayLoop gameplayLoop;
@@ -17,4 +17,9 @@ public class NextButton : MonoBehaviour
         gameplayLoop.NextPopUp();
     }
 
+
+    public void prevPlayerCard()
+    {
+        gameplayLoop.PrevPopUp();
+    }
 }

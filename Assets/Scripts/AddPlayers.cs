@@ -8,6 +8,9 @@ using TMPro;
 
 public class AddPlayers : MonoBehaviour
 {
+    // Singleton instance
+    public static AddPlayers Instance { get; private set; }
+
     private TMP_InputField playerNameInput;
 
     private Button artistRoleButton;
@@ -27,6 +30,15 @@ public class AddPlayers : MonoBehaviour
 
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         playerNameInput = GameObject.Find("InputField_PlayerName").GetComponent<TMP_InputField>();
 
         artistRoleButton = GameObject.Find("Button_ArtistRole").GetComponent<Button>();

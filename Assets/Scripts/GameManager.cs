@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     public enum PlayerRole
     {
         Artist,
-        Mathematician,
         Technician,
+        Engineer
     }
 
     private GameState currentState;
