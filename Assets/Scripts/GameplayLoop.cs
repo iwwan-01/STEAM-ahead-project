@@ -18,6 +18,10 @@ public class GameplayLoop : MonoBehaviour
 
     private int currentActive = 0;
 
+    //public QuestionCard[] questionCardsArtist;
+    //public QuestionCard[] questionCardsTechnician;
+    //public QuestionCard[] questionCardsEngineer;
+
     private void Awake()
     {
         canvasTransform = GameObject.Find("Canvas").GetComponent<Transform>();

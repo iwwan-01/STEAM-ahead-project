@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PinMovement : MonoBehaviour
 {
@@ -11,22 +13,20 @@ public class PinMovement : MonoBehaviour
     public int currentGrid;
     public bool tagCheck;
 
+    public TMP_Text diceResult;
+    public Button rollDiceBtn;
+
     private void Start()
     {
         destinationGrid = 0;
-
         currentGrid = 0;
+
+        rollDiceBtn.onClick.AddListener(() => ThrowDice());
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D)) //just for simulating a dice roll
-        {
-            ThrowDice();
-        }
-
-        MovePin(); //tries to move everyframe, bad practice but fast
-        
+        MovePin();
     }
 
     private void MovePin() 
@@ -43,6 +43,21 @@ public class PinMovement : MonoBehaviour
         if(currentGrid == destinationGrid && magnitude < 0.1f && currentGrid != 0 && tagCheck)
         {
             Debug.Log(grids[destinationGrid].tag);
+
+            if (grids[destinationGrid].tag == "GridOrange")
+            {
+                Debug.Log("ORANGECARD!");
+                //GameObject questionCard = Instantiate()
+            } else if (grids[destinationGrid].tag == "GridYellow")
+            {
+                Debug.Log("YELLOWCARD!");
+                //GameObject questionCard = Instantiate()
+            }
+            else if (grids[destinationGrid].tag == "GridPurple")
+            {
+                Debug.Log("PURPLECARD!");
+                //GameObject questionCard = Instantiate()
+            }
 
             tagCheck = false;
         }
@@ -65,5 +80,8 @@ public class PinMovement : MonoBehaviour
         DiceResult(num); //result of the dice should start this func.
 
         Debug.Log(num);
+        diceResult.text = $"Dice Roll: {num.ToString()}";
+
+        MovePin();
     }
 }
