@@ -767,7 +767,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2264443048074406522}
         m_TargetAssemblyTypeName: PopupNavigation, Assembly-CSharp
-        m_MethodName: prevPlayerCard
+        m_MethodName: PrevPlayerCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1206,12 +1206,12 @@ PrefabInstance:
     - target: {fileID: 6674406501523193377, guid: 5140c9e0a9a871645831c107ff514eb8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: nextPlayerCard
+      value: NextPlayerCard
       objectReference: {fileID: 0}
     - target: {fileID: 6674406501523193377, guid: 5140c9e0a9a871645831c107ff514eb8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: NextButton, Assembly-CSharp
+      value: PopupNavigation, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6674406501523193377, guid: 5140c9e0a9a871645831c107ff514eb8,
         type: 3}

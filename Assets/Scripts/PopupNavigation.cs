@@ -12,14 +12,24 @@ public class PopupNavigation : MonoBehaviour
         gameplayLoop = GameObject.Find("GameplayLoop").GetComponent<GameplayLoop>();
     }
 
-    public void nextPlayerCard()
+    public void NextPlayerCard()
     {
         gameplayLoop.NextPopUp();
     }
 
 
-    public void prevPlayerCard()
+    public void PrevPlayerCard()
     {
         gameplayLoop.PrevPopUp();
+    }
+
+    public void CloseQuestion()
+    {
+        gameplayLoop.FinishQuestion();
+    }
+
+    public void PrevQuestion()
+    {
+        gameplayLoop.PrevQuestion();
     }
 }

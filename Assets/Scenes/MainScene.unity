@@ -306,6 +306,22 @@ MonoBehaviour:
   - {fileID: 8376063899721255465, guid: c3c1ea3278468db419ab3491715dc494, type: 3}
   - {fileID: 2657318793058824329, guid: 9d259e9a9af6e624da2178e3f5a212ca, type: 3}
   instantiatedPopUps: []
+  instantiatedQuestionCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   questionCardPrefabs:
   - {fileID: 1058598363708259972, guid: 027d6e33744f48b4c91b45123488f23b, type: 3}
   - {fileID: 1058598363708259972, guid: e53f701360aca944bb7bca76fd2dca2e, type: 3}
@@ -980,6 +996,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381243342250161816, guid: 47bc1aeade4a24e4ca9d05a650a80a3d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 085f9c9d93a9f9c4281c30db650cf5c7,
+        type: 3}
+    - target: {fileID: 8381243342250161817, guid: 47bc1aeade4a24e4ca9d05a650a80a3d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8381243342250161817, guid: 47bc1aeade4a24e4ca9d05a650a80a3d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

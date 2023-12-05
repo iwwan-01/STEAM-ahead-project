@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PinMovement : MonoBehaviour
 {
@@ -54,6 +55,9 @@ public class PinMovement : MonoBehaviour
             else if (grids[destinationGrid].tag == "GridPurple")
             {
                 GameplayLoop.Instance.InstantiateQuestionCard("GridPurple");
+            } else if (grids[destinationGrid].tag == "End")
+            {
+                SceneManager.LoadScene("EmojiScene");
             }
 
             tagCheck = false;

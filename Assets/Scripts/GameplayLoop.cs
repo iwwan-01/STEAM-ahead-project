@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Linq;
+using UnityEngine;
 
 public class GameplayLoop : MonoBehaviour
 {
@@ -14,10 +9,12 @@ public class GameplayLoop : MonoBehaviour
     private GameObject[] popUps;
     [SerializeField]
     private GameObject[] instantiatedPopUps;
+    [SerializeField]
+    private GameObject[] instantiatedQuestionCards = new GameObject[15];
     private Transform canvasTransform;
 
     private int currentActivePopup = 0;
-    private int currentActiveQuestion = 0;
+    private int currentActiveQuestion = -1;
 
     public GameObject[] questionCardPrefabs;
 
@@ -25,12 +22,11 @@ public class GameplayLoop : MonoBehaviour
     public QuestionCard[] questionCardsTechnician;
     public QuestionCard[] questionCardsEngineer;
 
-    [SerializeField]
-    private GameObject[] instantiatedQuestionCards;
-
     int orangeIndex = 0;
     int yellowIndex = 0;
     int purpleIndex = 0;
+
+    int allIndex = 0;
 
 
     private void Awake()
@@ -57,9 +53,9 @@ public class GameplayLoop : MonoBehaviour
         instantiatedPopUps = new GameObject[10];
         int index = 0;
 
-        foreach(PlayerCard player in AddPlayers.Instance.playerList)
+        foreach (PlayerCard player in AddPlayers.Instance.playerList)
         {
-            if(player.PlayerRole == "Artist")
+            if (player.PlayerRole == "Artist")
             {
                 GameObject popUpObject = Instantiate(popUps[0], canvasTransform);
                 TMP_Text popUpObjectPlayerName = popUpObject.transform.Find("Text_Player").gameObject.GetComponent<TMP_Text>();
@@ -67,7 +63,8 @@ public class GameplayLoop : MonoBehaviour
                 instantiatedPopUps[index] = popUpObject;
                 popUpObject.SetActive(false);
                 index++;
-            } else if(player.PlayerRole == "Technician")
+            }
+            else if (player.PlayerRole == "Technician")
             {
                 GameObject popUpObject = Instantiate(popUps[1], canvasTransform);
                 TMP_Text popUpObjectPlayerName = popUpObject.transform.Find("Text_Player").gameObject.GetComponent<TMP_Text>();
@@ -75,7 +72,8 @@ public class GameplayLoop : MonoBehaviour
                 instantiatedPopUps[index] = popUpObject;
                 popUpObject.SetActive(false);
                 index++;
-            } else if(player.PlayerRole == "Engineer")
+            }
+            else if (player.PlayerRole == "Engineer")
             {
                 GameObject popUpObject = Instantiate(popUps[2], canvasTransform);
                 TMP_Text popUpObjectPlayerName = popUpObject.transform.Find("Text_Player").gameObject.GetComponent<TMP_Text>();
@@ -113,32 +111,75 @@ public class GameplayLoop : MonoBehaviour
         }
     }
 
-    public void InstantiateQuestionCard(string GridColor) {
-        if(GridColor == "GridOrange")
+
+
+    public void InstantiateQuestionCard(string GridColor)
+    {
+        if (GridColor == "GridOrange")
         {
             Debug.Log("Instantiated an artist card!");
             GameObject questionCardObject = Instantiate(questionCardPrefabs[0], canvasTransform);
+            //
+            questionCardObject.SetActive(false);
+            instantiatedQuestionCards[allIndex] = questionCardObject;
             QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
             controller.Initialize(questionCardsArtist[orangeIndex]);
             orangeIndex++;
+            allIndex++;
             Debug.Log($"Orange Index:{orangeIndex}");
-        } else if (GridColor == "GridPurple")
+        }
+        else if (GridColor == "GridPurple")
         {
             Debug.Log("Instantiated a engineer card!");
             GameObject questionCardObject = Instantiate(questionCardPrefabs[1], canvasTransform);
+            //
+            questionCardObject.SetActive(false);
+            instantiatedQuestionCards[allIndex] = questionCardObject;
             QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
             controller.Initialize(questionCardsEngineer[purpleIndex]);
             purpleIndex++;
+            allIndex++;
             Debug.Log($"Purple Index:{purpleIndex}");
         }
         else if (GridColor == "GridYellow")
         {
             Debug.Log("Instantiated an technician card!");
             GameObject questionCardObject = Instantiate(questionCardPrefabs[2], canvasTransform);
+            //
+            questionCardObject.SetActive(false);
+            instantiatedQuestionCards[allIndex] = questionCardObject;
             QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
             controller.Initialize(questionCardsTechnician[yellowIndex]);
             yellowIndex++;
+            allIndex++;
             Debug.Log($"Yellow Index:{yellowIndex}");
+        }
+
+        currentActiveQuestion++;
+        instantiatedQuestionCards[currentActiveQuestion].SetActive(true);
+    }
+
+    public void PrevQuestion()
+    {
+        Debug.Log($"Current Active Question: {currentActiveQuestion}");
+        if (currentActiveQuestion > 0 && currentActiveQuestion != 0)
+        {
+            instantiatedQuestionCards[currentActiveQuestion].SetActive(false);
+            instantiatedQuestionCards[currentActiveQuestion - 1].SetActive(true);
+            //currentActiveQuestion--;
+        }
+    }
+
+    public void FinishQuestion()
+    {
+        if (currentActiveQuestion > 0 && currentActiveQuestion != 0)
+        {
+            Debug.Log($"Current Active Question: {currentActiveQuestion}");
+            instantiatedQuestionCards[currentActiveQuestion].SetActive(false);
+            //currentActiveQuestion--;
+        } else if (currentActiveQuestion == 0)
+        {
+            instantiatedQuestionCards[currentActiveQuestion].SetActive(false);
         }
 
     }
