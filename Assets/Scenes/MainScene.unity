@@ -306,6 +306,28 @@ MonoBehaviour:
   - {fileID: 8376063899721255465, guid: c3c1ea3278468db419ab3491715dc494, type: 3}
   - {fileID: 2657318793058824329, guid: 9d259e9a9af6e624da2178e3f5a212ca, type: 3}
   instantiatedPopUps: []
+  questionCardPrefabs:
+  - {fileID: 1058598363708259972, guid: 027d6e33744f48b4c91b45123488f23b, type: 3}
+  - {fileID: 1058598363708259972, guid: e53f701360aca944bb7bca76fd2dca2e, type: 3}
+  - {fileID: 1058598363708259972, guid: f7d1f3e8123ab5b458a854cc82ab7c6f, type: 3}
+  questionCardsArtist:
+  - {fileID: 11400000, guid: 2a1c183ff79cc40c797f15f0aa181ddc, type: 2}
+  - {fileID: 11400000, guid: fb75f9137080843fd9a5675bce9d45e3, type: 2}
+  - {fileID: 11400000, guid: 506fe715b290141f0988168dd080ee3d, type: 2}
+  - {fileID: 11400000, guid: 265e5c540bfe64ce89eb884e1e122e85, type: 2}
+  - {fileID: 11400000, guid: 5701500a4fce2492eabb949b1a317d3b, type: 2}
+  questionCardsTechnician:
+  - {fileID: 11400000, guid: 8b148f66c2ac74ab68e01660e4498eb6, type: 2}
+  - {fileID: 11400000, guid: 50a42a22350794229b276c0b2ec9a317, type: 2}
+  - {fileID: 11400000, guid: 2cb80cb70a4154c8eb09b608f343f56e, type: 2}
+  - {fileID: 11400000, guid: b8d458d3657cc48609a9e6075e25341d, type: 2}
+  - {fileID: 11400000, guid: f549aa33b061a4ff8abb1f5bdd0e03ce, type: 2}
+  questionCardsEngineer:
+  - {fileID: 11400000, guid: 1a2ea443acd364628b8f2b8d6521d87f, type: 2}
+  - {fileID: 11400000, guid: 9f579d2a0f05a417aad70cf85b963ca6, type: 2}
+  - {fileID: 11400000, guid: c32256530f51e4870944067c2633edd3, type: 2}
+  - {fileID: 11400000, guid: 1f9dc4fc37fe74e418758293dbeb788c, type: 2}
+  - {fileID: 11400000, guid: b92c11dd62aeb4e43adc777baed476b7, type: 2}
 --- !u!1 &727355483
 GameObject:
   m_ObjectHideFlags: 0

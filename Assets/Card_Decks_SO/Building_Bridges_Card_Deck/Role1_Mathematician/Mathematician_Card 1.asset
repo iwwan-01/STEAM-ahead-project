@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardCategory: 1
   CardTitle: Mathematician Card 1
-  CardQuestion: 'What problem(s) should you guys solve? Write them down.
+  CardQuestion: 'What problems should you guys solve? Write them down
 
 '
   CardDescription: 

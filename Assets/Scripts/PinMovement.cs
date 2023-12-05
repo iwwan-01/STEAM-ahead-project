@@ -46,17 +46,14 @@ public class PinMovement : MonoBehaviour
 
             if (grids[destinationGrid].tag == "GridOrange")
             {
-                Debug.Log("ORANGECARD!");
-                //GameObject questionCard = Instantiate()
+                GameplayLoop.Instance.InstantiateQuestionCard("GridOrange");
             } else if (grids[destinationGrid].tag == "GridYellow")
             {
-                Debug.Log("YELLOWCARD!");
-                //GameObject questionCard = Instantiate()
+                GameplayLoop.Instance.InstantiateQuestionCard("GridYellow");
             }
             else if (grids[destinationGrid].tag == "GridPurple")
             {
-                Debug.Log("PURPLECARD!");
-                //GameObject questionCard = Instantiate()
+                GameplayLoop.Instance.InstantiateQuestionCard("GridPurple");
             }
 
             tagCheck = false;

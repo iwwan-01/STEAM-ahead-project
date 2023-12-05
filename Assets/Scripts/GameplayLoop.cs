@@ -8,8 +8,8 @@ using System.Linq;
 
 public class GameplayLoop : MonoBehaviour
 {
-    // Singleton instance
-    public static GameplayLoop Instance;
+    public static GameplayLoop Instance { get; private set; }
+
     [SerializeField]
     private GameObject[] popUps;
     [SerializeField]
@@ -18,12 +18,28 @@ public class GameplayLoop : MonoBehaviour
 
     private int currentActive = 0;
 
-    //public QuestionCard[] questionCardsArtist;
-    //public QuestionCard[] questionCardsTechnician;
-    //public QuestionCard[] questionCardsEngineer;
+    public GameObject[] questionCardPrefabs;
+
+    public QuestionCard[] questionCardsArtist;
+    public QuestionCard[] questionCardsTechnician;
+    public QuestionCard[] questionCardsEngineer;
+
+    int orangeIndex = 0;
+    int yellowIndex = 0;
+    int purpleIndex = 0;
+
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         canvasTransform = GameObject.Find("Canvas").GetComponent<Transform>();
     }
 
@@ -91,5 +107,35 @@ public class GameplayLoop : MonoBehaviour
             instantiatedPopUps[currentActive - 1].SetActive(true);
             currentActive--;
         }
+    }
+
+    public void InstantiateQuestionCard(string GridColor) {
+        if(GridColor == "GridOrange")
+        {
+            Debug.Log("Instantiated an artist card!");
+            GameObject questionCardObject = Instantiate(questionCardPrefabs[0], canvasTransform);
+            QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
+            controller.Initialize(questionCardsArtist[orangeIndex]);
+            orangeIndex++;
+            Debug.Log($"Orange Index:{orangeIndex}");
+        } else if (GridColor == "GridPurple")
+        {
+            Debug.Log("Instantiated a engineer card!");
+            GameObject questionCardObject = Instantiate(questionCardPrefabs[1], canvasTransform);
+            QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
+            controller.Initialize(questionCardsEngineer[purpleIndex]);
+            purpleIndex++;
+            Debug.Log($"Purple Index:{purpleIndex}");
+        }
+        else if (GridColor == "GridYellow")
+        {
+            Debug.Log("Instantiated an technician card!");
+            GameObject questionCardObject = Instantiate(questionCardPrefabs[2], canvasTransform);
+            QuestionCardPrefabController controller = questionCardObject.GetComponent<QuestionCardPrefabController>();
+            controller.Initialize(questionCardsTechnician[yellowIndex]);
+            yellowIndex++;
+            Debug.Log($"Yellow Index:{yellowIndex}");
+        }
+
     }
 }
