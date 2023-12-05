@@ -16,13 +16,17 @@ public class GameplayLoop : MonoBehaviour
     private GameObject[] instantiatedPopUps;
     private Transform canvasTransform;
 
-    private int currentActive = 0;
+    private int currentActivePopup = 0;
+    private int currentActiveQuestion = 0;
 
     public GameObject[] questionCardPrefabs;
 
     public QuestionCard[] questionCardsArtist;
     public QuestionCard[] questionCardsTechnician;
     public QuestionCard[] questionCardsEngineer;
+
+    [SerializeField]
+    private GameObject[] instantiatedQuestionCards;
 
     int orangeIndex = 0;
     int yellowIndex = 0;
@@ -82,30 +86,30 @@ public class GameplayLoop : MonoBehaviour
             }
         }
 
-        instantiatedPopUps[currentActive].SetActive(true);
+        instantiatedPopUps[currentActivePopup].SetActive(true);
     }
 
     public void NextPopUp()
     {
-        if (currentActive < instantiatedPopUps.Length - 1)
+        if (currentActivePopup < instantiatedPopUps.Length - 1)
         {
-            instantiatedPopUps[currentActive].SetActive(false);
-            instantiatedPopUps[currentActive + 1].SetActive(true);
-            currentActive++;
+            instantiatedPopUps[currentActivePopup].SetActive(false);
+            instantiatedPopUps[currentActivePopup + 1].SetActive(true);
+            currentActivePopup++;
         }
         else
         {
-            instantiatedPopUps[currentActive].SetActive(false);
+            instantiatedPopUps[currentActivePopup].SetActive(false);
         }
     }
 
     public void PrevPopUp()
     {
-        if (currentActive > 0)
+        if (currentActivePopup > 0)
         {
-            instantiatedPopUps[currentActive].SetActive(false);
-            instantiatedPopUps[currentActive - 1].SetActive(true);
-            currentActive--;
+            instantiatedPopUps[currentActivePopup].SetActive(false);
+            instantiatedPopUps[currentActivePopup - 1].SetActive(true);
+            currentActivePopup--;
         }
     }
 

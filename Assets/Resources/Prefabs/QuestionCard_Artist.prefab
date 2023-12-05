@@ -488,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.9, y: 0}
+  m_AnchoredPosition: {x: 49.3, y: -1.7}
   m_SizeDelta: {x: 200, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6955496397049871428
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go Back
+  m_text: PREVIOUS TASK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b1a455e349e920f4f9cefa4b573f1c82, type: 2}
   m_sharedMaterial: {fileID: 3379415497284973133, guid: b1a455e349e920f4f9cefa4b573f1c82,
@@ -547,8 +547,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -942,6 +942,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3809195912125378800}
     m_Modifications:
+    - target: {fileID: 376420181421185010, guid: 5140c9e0a9a871645831c107ff514eb8,
+        type: 3}
+      propertyPath: m_text
+      value: TASK COMPLETED
+      objectReference: {fileID: 0}
+    - target: {fileID: 376420181421185010, guid: 5140c9e0a9a871645831c107ff514eb8,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 376420181421185010, guid: 5140c9e0a9a871645831c107ff514eb8,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2463017666056632114, guid: 5140c9e0a9a871645831c107ff514eb8,
         type: 3}
       propertyPath: m_Name
